@@ -18,11 +18,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
+import com.mashape.unirest.http.exceptions.UnirestException;
 import com.uniremington.arquitecture_app.R;
 import com.uniremington.arquitecture_app.databinding.FragmentFirstBinding;
 import com.uniremington.arquitecture_app.presenter.FirstFragmentPresenterImpl;
 import com.uniremington.arquitecture_app.presenter.IFirstFragmentPresenter;
 
+import org.json.JSONException;
+
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class FirstFragment extends Fragment implements IFirstFragmentView {
@@ -80,7 +84,7 @@ public class FirstFragment extends Fragment implements IFirstFragmentView {
 
     @Override
     public void fillFields(int idAppUrl, String nameApp, String appUrl, String phone, String routingPoint, String environment, char state) {
-        System.out.println(idAppUrl+" --- "+nameApp+" --- "+appUrl+" --- "+phone+" --- "+routingPoint+" --- "+environment+" --- "+state+" --- ");
+        System.out.println(idAppUrl + " --- " + nameApp + " --- " + appUrl + " --- " + phone + " --- " + routingPoint + " --- " + environment + " --- " + state + " --- ");
         tvIdApp.setText(String.valueOf(idAppUrl));
         tvDid.setText(phone);
         tvRoutingPoint.setText(routingPoint);
@@ -118,12 +122,16 @@ public class FirstFragment extends Fragment implements IFirstFragmentView {
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!etIdApp.getText().toString().equals("") && !etNombreApp.getText().toString().equals("") &&
+                if (!etNombreApp.getText().toString().equals("") &&
                         !etAppURL.getText().toString().equals("") && !etDid.getText().toString().equals("") &&
                         !etRoutingPoint.getText().toString().equals("") && !stEntorno.equals("Sel.Entorno") && !Character.isLetter(chEstado)) {
 
-                    fragmentPresenter.save(Integer.parseInt(etIdApp.getText().toString()), etNombreApp.getText().toString(),
-                            etAppURL.getText().toString(), etDid.getText().toString(), etRoutingPoint.getText().toString(), stEntorno, chEstado);
+                    try {
+                        fragmentPresenter.save(Integer.parseInt(etIdApp.getText().toString().equals("") ? "0" : etIdApp.getText().toString()), etNombreApp.getText().toString(),
+                                etAppURL.getText().toString(), etDid.getText().toString(), etRoutingPoint.getText().toString(), stEntorno, chEstado);
+                    } catch (UnirestException | JSONException e) {
+                        e.printStackTrace();
+                    }
 
                 } else {
                     showToastCreate("Llene todos los campos", 0);
@@ -139,7 +147,7 @@ public class FirstFragment extends Fragment implements IFirstFragmentView {
                 if (!etIdApp.getText().toString().equals("")) {
                     try {
                         fragmentPresenter.findById(Integer.parseInt(etIdApp.getText().toString()));
-                    } catch (SQLException e) {
+                    } catch (SQLException | UnirestException | JSONException e) {
                         e.printStackTrace();
                     }
                 } else {
@@ -156,8 +164,12 @@ public class FirstFragment extends Fragment implements IFirstFragmentView {
                         !etAppURL.getText().toString().equals("") && !etDid.getText().toString().equals("") &&
                         !etRoutingPoint.getText().toString().equals("") && !stEntorno.equals("Sel.Entorno") && !Character.isLetter(chEstado)) {
 
-                    fragmentPresenter.updateById(Integer.parseInt(etIdApp.getText().toString()), etNombreApp.getText().toString(),
-                            etAppURL.getText().toString(), etDid.getText().toString(), etRoutingPoint.getText().toString(), stEntorno, chEstado);
+                    try {
+                        fragmentPresenter.updateById(Integer.parseInt(etIdApp.getText().toString()), etNombreApp.getText().toString(),
+                                etAppURL.getText().toString(), etDid.getText().toString(), etRoutingPoint.getText().toString(), stEntorno, chEstado);
+                    } catch (UnirestException | JSONException e) {
+                        e.printStackTrace();
+                    }
 
                 } else {
                     showToastCreate("Llene todos los campos", 0);
@@ -169,7 +181,11 @@ public class FirstFragment extends Fragment implements IFirstFragmentView {
             @Override
             public void onClick(View v) {
                 if (!etIdApp.getText().toString().equals("")) {
-                    fragmentPresenter.deleteById(Integer.parseInt(etIdApp.getText().toString()));
+                    try {
+                        fragmentPresenter.deleteById(Integer.parseInt(etIdApp.getText().toString()));
+                    } catch (UnirestException e) {
+                        e.printStackTrace();
+                    }
                 } else {
                     showToastCreate("Llene todos los campos", 0);
                 }

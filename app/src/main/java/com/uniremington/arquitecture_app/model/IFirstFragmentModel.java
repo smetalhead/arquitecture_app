@@ -1,5 +1,9 @@
 package com.uniremington.arquitecture_app.model;
 
+import com.mashape.unirest.http.exceptions.UnirestException;
+
+import org.json.JSONException;
+
 import java.sql.SQLException;
 
 public interface IFirstFragmentModel {
@@ -12,11 +16,11 @@ public interface IFirstFragmentModel {
 
     void getEntorno();
 
-    void save(int idAppUrl, String nameApp, String appUrl, String phone, String routingPoint, String environment, char state);
+    void save(int idAppUrl, String nameApp, String appUrl, String phone, String routingPoint, String environment, char state) throws UnirestException, JSONException;
 
-    void findById(int appId) throws SQLException;
+    void findById(int appId) throws SQLException, UnirestException, JSONException;
 
-    void deleteById(int appId);
+    void deleteById(int appId) throws UnirestException;
 
-    void updateById(int appId, String nameApp, String appUrl, String phone, String routingPoint, String environment, char state);
+    void updateById(int appId, String nameApp, String appUrl, String phone, String routingPoint, String environment, char state) throws UnirestException, JSONException;
 }

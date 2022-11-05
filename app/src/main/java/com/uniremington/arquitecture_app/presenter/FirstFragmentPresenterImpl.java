@@ -4,10 +4,13 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
+import com.mashape.unirest.http.exceptions.UnirestException;
 import com.uniremington.arquitecture_app.model.FirstFragmentModelImpl;
 import com.uniremington.arquitecture_app.model.IFirstFragmentModel;
 import com.uniremington.arquitecture_app.view.FirstFragment;
 import com.uniremington.arquitecture_app.view.IFirstFragmentView;
+
+import org.json.JSONException;
 
 import java.sql.SQLException;
 
@@ -23,19 +26,19 @@ public class FirstFragmentPresenterImpl implements IFirstFragmentPresenter {
 
 
     @Override
-    public void deleteById(int appId) {
+    public void deleteById(int appId) throws UnirestException {
         fragmentModel.deleteById(appId);
     }
 
     @Override
-    public void updateById(int appId, String nameApp, String appUrl, String phone, String routingPoint, String environment, char state) {
+    public void updateById(int appId, String nameApp, String appUrl, String phone, String routingPoint, String environment, char state) throws UnirestException, JSONException {
         if (fragmentView != null) {
             fragmentModel.updateById(appId,nameApp,appUrl,phone,routingPoint,environment,state);
         }
     }
 
     @Override
-    public void findById(int appId) throws SQLException {
+    public void findById(int appId) throws SQLException, UnirestException, JSONException {
         fragmentModel.findById(appId);
     }
 
@@ -45,7 +48,7 @@ public class FirstFragmentPresenterImpl implements IFirstFragmentPresenter {
     }
 
     @Override
-    public void save(int idAppUrl, String nameApp, String appUrl, String phone, String routingPoint, String environment, char state) {
+    public void save(int idAppUrl, String nameApp, String appUrl, String phone, String routingPoint, String environment, char state) throws UnirestException, JSONException {
         if (fragmentView != null) {
             fragmentModel.save(idAppUrl, nameApp, appUrl, phone, routingPoint, environment, state);
         }
