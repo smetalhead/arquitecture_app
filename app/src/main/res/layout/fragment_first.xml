@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.FirstFragment">
+
+    <Button
+        android:id="@+id/button_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="UPDATE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_delete"
+        app:layout_constraintStart_toEndOf="@+id/button_find" />
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="32dp"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_find"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEntorno" />
+
+    <Button
+        android:id="@+id/button_find"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="32dp"
+        android:text="FIND"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_update"
+        app:layout_constraintStart_toEndOf="@+id/button_save"
+        app:layout_constraintTop_toBottomOf="@+id/tvAppURL" />
+
+    <Button
+        android:id="@+id/button_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="5dp"
+        android:text="DELETE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_update"
+        app:layout_constraintTop_toBottomOf="@+id/tvAppURL" />
+
+    <EditText
+        android:id="@+id/etIdApp"
+        android:layout_width="181dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="17dp"
+        android:ems="10"
+        android:hint="ID_APP"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/etRoutingPoint"
+        app:layout_constraintEnd_toStartOf="@+id/etDid"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etAppURL"
+        android:layout_width="377dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="53dp"
+        android:ems="10"
+        android:hint="APP URL"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/tvDid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spStatus" />
+
+    <EditText
+        android:id="@+id/etRoutingPoint"
+        android:layout_width="179dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="29dp"
+        android:ems="10"
+        android:hint="RP"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/spEntorno"
+        app:layout_constraintEnd_toStartOf="@+id/etNombreApp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etIdApp" />
+
+    <EditText
+        android:id="@+id/etDid"
+        android:layout_width="186dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:hint="DID"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/etNombreApp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etIdApp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etNombreApp"
+        android:layout_width="175dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="29dp"
+        android:ems="10"
+        android:hint="NOMBRE APP"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/spStatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etRoutingPoint"
+        app:layout_constraintTop_toBottomOf="@+id/etDid" />
+
+    <Spinner
+        android:id="@+id/spEntorno"
+        android:layout_width="172dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="121dp"
+        android:textColor="@color/black"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tvIdApp"
+        app:layout_constraintEnd_toStartOf="@+id/spStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etRoutingPoint" />
+
+    <Spinner
+        android:id="@+id/spStatus"
+        android:layout_width="178dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="14dp"
+        android:textColor="@color/black"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/etAppURL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spEntorno"
+        app:layout_constraintTop_toBottomOf="@+id/etNombreApp" />
+
+    <TextView
+        android:id="@+id/tvNombreApp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="35dp"
+        android:text="NOMBRE APP"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/tvStatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvRoutingPoint"
+        app:layout_constraintTop_toBottomOf="@+id/tvDid" />
+
+    <TextView
+        android:id="@+id/tvRoutingPoint"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="36dp"
+        android:text="ROUTING POINT"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/tvEntorno"
+        app:layout_constraintEnd_toStartOf="@+id/tvNombreApp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvIdApp" />
+
+    <TextView
+        android:id="@+id/tvAppURL"
+        android:layout_width="379dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="526dp"
+        android:layout_marginBottom="93dp"
+        android:text="URL APP"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/button_find"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvIdApp"
+        android:layout_width="78dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginEnd="103dp"
+        android:layout_marginBottom="22dp"
+        android:text="ID_APP"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/tvRoutingPoint"
+        app:layout_constraintEnd_toStartOf="@+id/tvDid"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spEntorno" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="25dp"
+        android:text="STATUS"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/tvAppURL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvEntorno"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombreApp" />
+
+    <TextView
+        android:id="@+id/tvEntorno"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="156dp"
+        android:text="ENTORNO"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/button_save"
+        app:layout_constraintEnd_toStartOf="@+id/tvStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRoutingPoint" />
+
+    <TextView
+        android:id="@+id/tvDid"
+        android:layout_width="84dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="24dp"
+        android:text="DID"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/tvNombreApp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvIdApp"
+        app:layout_constraintTop_toBottomOf="@+id/etAppURL" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
