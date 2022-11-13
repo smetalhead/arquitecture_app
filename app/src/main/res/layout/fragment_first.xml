@@ -6,279 +6,358 @@
     android:layout_height="match_parent"
     tools:context=".view.FirstFragment">
 
-    <Button
-        android:id="@+id/button_update"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="UPDATE"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="616dp"
+        android:text="CREAR - ELIMINAR - ACTUALIZAR"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/button_delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etIdApp"
+        android:layout_width="159dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="621dp"
+        android:ems="10"
+        android:hint="ID App"
+        android:inputType="number"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_delete"
-        app:layout_constraintStart_toEndOf="@+id/button_find" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/etDid"
+        android:layout_width="195dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="80dp"
+        android:ems="10"
+        android:hint="Teléfono"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/spEntorno"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/etRoutingPoint"
+        android:layout_width="154dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="129dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="17dp"
+        android:ems="10"
+        android:hint="Routing Point"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/spStatus"
+        app:layout_constraintEnd_toStartOf="@+id/etNombreApp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etNombreApp"
+        android:layout_width="194dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="19dp"
+        android:ems="10"
+        android:hint="Nombre App"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/etRoutingPoint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etRoutingPoint"
+        app:layout_constraintTop_toTopOf="@+id/etRoutingPoint"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Spinner
+        android:id="@+id/spStatus"
+        android:layout_width="151dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="498dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/spEntorno"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etRoutingPoint" />
+
+    <Spinner
+        android:id="@+id/spEntorno"
+        android:layout_width="192dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="499dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spStatus"
+        app:layout_constraintTop_toBottomOf="@+id/etDid" />
+
+    <EditText
+        android:id="@+id/etAppURL"
+        android:layout_width="379dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="431dp"
+        android:ems="10"
+        android:hint="URL App"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="370dp"
+        android:layout_height="29dp"
+        android:layout_marginBottom="376dp"
+        android:text="CONSULTAR"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/IdApptv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="Id App"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvIdApp"
+        app:layout_constraintStart_toStartOf="@+id/tvIdApp" />
+
+    <TextView
+        android:id="@+id/tvIdApp"
+        android:layout_width="76dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="416dp"
+        android:layout_marginEnd="204dp"
+        android:layout_marginBottom="40dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/NombreApptv"
+        app:layout_constraintEnd_toStartOf="@+id/tvRoutingPoint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/didTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="11dp"
+        android:text="Teléfono"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvDid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.397"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDid"
+        android:layout_width="106dp"
+        android:layout_height="26dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/tvIdApp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.392"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvIdApp" />
+
+    <TextView
+        android:id="@+id/RoutingPoint"
+        android:layout_width="98dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="32dp"
+        android:text="Routing Point"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvRoutingPoint"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/tvRoutingPoint"
+        android:layout_width="99dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="2dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvIdApp"
+        app:layout_constraintTop_toBottomOf="@+id/RoutingPoint"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/NombreApptv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="6dp"
+        android:text="Nombre App"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvNombreApp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvIdApp" />
+
+    <TextView
+        android:id="@+id/tvNombreApp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="187dp"
+        android:layout_marginBottom="196dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NombreApptv" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="7dp"
+        android:text="Entorno"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvEntorno"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvEntorno"
+        android:layout_width="90dp"
+        android:layout_height="0dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNombreApp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvNombreApp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="7dp"
+        android:text="Status"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvStatus"
+        app:layout_constraintEnd_toEndOf="@+id/tvStatus" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="38dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNombreApp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvNombreApp"
+        app:layout_constraintTop_toTopOf="@+id/tvEntorno"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="9dp"
+        android:text="URL App"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvAppURL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAppURL"
+        android:layout_width="360dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="99dp"
+        android:layout_marginBottom="105dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/NombreApptv" />
 
     <Button
         android:id="@+id/button_save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="6dp"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="11dp"
         android:layout_marginBottom="32dp"
         android:text="Save"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_find"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button_find"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="19dp"
         android:layout_marginBottom="32dp"
-        android:text="FIND"
+        android:text="Find"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_update"
         app:layout_constraintStart_toEndOf="@+id/button_save" />
 
     <Button
         android:id="@+id/button_delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="32dp"
-        android:text="DELETE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button_update" />
-
-    <EditText
-        android:id="@+id/etIdApp"
-        android:layout_width="179dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="17dp"
-        android:ems="10"
-        android:hint="ID_APP"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/etRoutingPoint"
-        app:layout_constraintEnd_toStartOf="@+id/etDid"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/etAppURL"
-        android:layout_width="377dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="19dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginBottom="60dp"
-        android:ems="10"
-        android:hint="APP URL"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/tvDid"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spStatus" />
-
-    <EditText
-        android:id="@+id/etRoutingPoint"
-        android:layout_width="179dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="29dp"
-        android:ems="10"
-        android:hint="RP"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/spEntorno"
-        app:layout_constraintEnd_toStartOf="@+id/etNombreApp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etIdApp" />
-
-    <EditText
-        android:id="@+id/etDid"
-        android:layout_width="186dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="12dp"
-        android:ems="10"
-        android:hint="DID"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/etNombreApp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/etIdApp"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/etNombreApp"
-        android:layout_width="174dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="29dp"
-        android:ems="10"
-        android:hint="NOMBRE APP"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/spStatus"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/etRoutingPoint"
-        app:layout_constraintTop_toBottomOf="@+id/etDid" />
-
-    <Spinner
-        android:id="@+id/spEntorno"
-        android:layout_width="172dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="24dp"
+        android:layout_width="91dp"
+        android:layout_height="0dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="121dp"
-        android:background="#FFFFFF"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/tvIdApp"
-        app:layout_constraintEnd_toStartOf="@+id/spStatus"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etRoutingPoint" />
-
-    <Spinner
-        android:id="@+id/spStatus"
-        android:layout_width="178dp"
-        android:layout_height="44dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginBottom="14dp"
-        android:background="#FFFFFF"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/etAppURL"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/spEntorno"
-        app:layout_constraintTop_toBottomOf="@+id/etNombreApp" />
-
-    <TextView
-        android:id="@+id/tvNombreApp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="39dp"
-        android:layout_marginBottom="35dp"
-        android:text="NOMBRE APP"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/tvStatus"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvRoutingPoint"
-        app:layout_constraintTop_toBottomOf="@+id/tvDid" />
-
-    <TextView
-        android:id="@+id/tvRoutingPoint"
-        android:layout_width="148dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="46dp"
-        android:layout_marginBottom="36dp"
-        android:text="ROUTING POINT"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/tvEntorno"
-        app:layout_constraintEnd_toStartOf="@+id/tvNombreApp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvIdApp" />
-
-    <TextView
-        android:id="@+id/tvAppURL"
-        android:layout_width="379dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="576dp"
-        android:text="URL APP"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.375"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvIdApp"
-        android:layout_width="78dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="66dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="103dp"
-        android:layout_marginBottom="22dp"
-        android:text="ID_APP"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/tvRoutingPoint"
-        app:layout_constraintEnd_toStartOf="@+id/tvDid"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spEntorno" />
-
-    <TextView
-        android:id="@+id/tvStatus"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="39dp"
-        android:layout_marginBottom="25dp"
-        android:text="STATUS"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/tvAppURL"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvEntorno"
-        app:layout_constraintTop_toBottomOf="@+id/tvNombreApp" />
-
-    <TextView
-        android:id="@+id/tvEntorno"
-        android:layout_width="146dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="150dp"
-        android:text="ENTORNO"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/button_save"
-        app:layout_constraintEnd_toStartOf="@+id/tvStatus"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRoutingPoint" />
-
-    <TextView
-        android:id="@+id/tvDid"
-        android:layout_width="84dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="81dp"
-        android:layout_marginBottom="24dp"
-        android:text="DID"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/tvNombreApp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etAppURL" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="383dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="5dp"
-        android:text="CREAR - ELIMINAR - ACTUALIZAR"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="197dp"
-        android:layout_height="35dp"
-        android:layout_marginBottom="387dp"
-        android:text="Resultado Consulta"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:layout_marginBottom="32dp"
+        android:text="Delete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/button_update"
+        android:layout_width="99dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="125dp"
+        android:text="UPDATE"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_find" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,7 +13,7 @@ public class JDBCConnection {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
             Class.forName("org.postgresql.Driver");
-            connection = DriverManager.getConnection("jdbc:postgresql://10.0.2.2:5432/ivrApp", "userapp", "admin");
+            connection = DriverManager.getConnection("jdbc:postgresql://10.0.2.2:5432/ivrApps", "userapp", "admin");
         } catch (Exception er) {
             System.err.println("Error Conexion" + er.toString());
         }
